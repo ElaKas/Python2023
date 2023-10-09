@@ -13,28 +13,15 @@ kod_soucastky = input("Jaky kod ma soucastka? ")
 kod_soucastky = kod_soucastky.upper()   #vadila mi velka pismena v kodu soucastky, tak jsem si to vylepsila
 mnozstvi = int(input("Kolik kusu potrebujes? "))
 
-#Varianta 1
-if not kod_soucastky in sklad:
-    print("Součástka není skladem.")
-
-#Varianta 2
 if kod_soucastky in sklad:
     if (sklad[kod_soucastky]) <= mnozstvi:
         print(f"Muzu prodat jen {sklad[kod_soucastky]} kusu.")
-        del sklad[kod_soucastky]
-    #else:
-     #   print("Nakup neprobehl.")
-
-#print(sklad)
-
-#Varianta 3
-
-if kod_soucastky in sklad:
-    if (sklad[kod_soucastky]) >= mnozstvi:
+        sklad.pop(kod_soucastky)
+    else: 
+        if (sklad[kod_soucastky]) >= mnozstvi:
          print("Soucastku pridavam do objednavky.")
          sklad[kod_soucastky] -= mnozstvi
-    #else:
-        #print("Nakup neprobehl.")
-#print(sklad)
+else:
+        print("Součástka není skladem.")
 
-#else a print(sklad) tam mam pro kontrolu, jestli vse funguje
+#print(sklad)
