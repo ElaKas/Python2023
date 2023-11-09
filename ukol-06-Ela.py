@@ -10,7 +10,7 @@ class Auto:
             return "Potvrzuji zapůjčení vozidla."
             self.dostupne = False
         else:
-            self.dostupne == False
+            self.dostupne = False
             return "Vozidlo není k dispozici."
         
     def get_info(self):
